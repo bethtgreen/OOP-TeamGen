@@ -9,7 +9,9 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-teamGroup = [];
+var teamGroup = [];
+
+
 function appMenu() {
     createManager();
     function createManager(){
@@ -61,7 +63,7 @@ function appMenu() {
             }
         })
     }
-}
+
 
 // take whatever the user wants and save it to whatever object matches
 function createEngineer(){
@@ -144,17 +146,15 @@ function createIntern(){
         }
     })
 }
-
-
 function buildHTML(){
     // to-do: write to html file
-    console.log("Write to file");
-        
-        fs.writeFile("main.html", , (err) =>{
-            if (err) throw err;
-        console.log("File = Saved");
-        });
+    var writeHTML = render(teamGroup);
+    fs.writeFile("./team.html", writeHTML, function (err){
+        if (err) throw err;
+    });
     }
+
+}
 
 
 
