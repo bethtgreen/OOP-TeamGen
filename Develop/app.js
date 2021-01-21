@@ -16,9 +16,27 @@ function appMenu() {
         inquirer.prompt([
             {
                 type: "input",
-                name: "ManagerName",
+                name: "managerName",
                 message: "What is your manager's name?",
                 //validate user input here
+            },
+            {
+                type: "input",
+                name: "managerId",
+                message: "What is your manager's ID?",
+              
+            },
+            {
+                type: "input",
+                name: "managerEmail",
+                message: "What is your manager's e-mail?",
+              
+            },
+            {
+                type: "input",
+                name: "managerOfficeNumber",
+                message: "What is your manager's office number?",
+                
             },
             {
                 type: "input",
