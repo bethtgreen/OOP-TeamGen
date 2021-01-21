@@ -106,34 +106,34 @@ function createEngineer(){
 }
 
 
-function createEngineer(){
+function createIntern(){
     console.log("Choose your team members!")
     inquirer.prompt([
         {
             type: "input",
             name: "name",
-            message: "What is the engineer's name?",
+            message: "What is the Interns's name?",
         },
         {
             type: "input",
             name: "id",
-            message: "What is the engineer's ID?",
+            message: "What is the Interns's ID?",
         },
         {
             type: "input",
             name: "email",
-            message: "What is the engineer's e-mail?",
+            message: "What is the Interns's e-mail?",
         },
         {
             type: "input",
-            name: "github",
-            message: "What is the engineer's Github username?",
+            name: "school",
+            message: "What is the Intern's school?",
         },
     
     ]).then(answers => {
-        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-        console.log(engineer);
-        teamGroup.push(manager);
+        const Intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        console.log(intern);
+        teamGroup.push(intern);
         if (answers.moreEmployees == "Intern") {
             createIntern();
         }
