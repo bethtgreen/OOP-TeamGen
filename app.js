@@ -147,8 +147,16 @@ function createIntern(){
 
 
 function buildHTML(){
-    console.log("eek");
-}
+    // to-do: write to html file
+    console.log("Write to file");
+        
+        fs.writeFile("main.html", , (err) =>{
+            if (err) throw err;
+        console.log("File = Saved");
+        });
+    }
+
 
 
 appMenu();
+
