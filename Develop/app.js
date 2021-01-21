@@ -19,8 +19,25 @@ function appMenu() {
                 name: "ManagerName",
                 message: "What is your manager's name?",
                 //validate user input here
+            },
+            {
+                type: "input",
+                name: "moreEmployees",
+                message: "Would you like to add more employees?",
+                choices: ["Yes", "No"],
+                //validate user input here
             }
-        ])
+
+        ]).then(answers => {
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            console.log(manager);
+            if (answers.moreEmployees == "Yes") {
+                createTeam();
+            } else{
+                console.log("No");
+            }
+            
+        })
     }
 }
 
