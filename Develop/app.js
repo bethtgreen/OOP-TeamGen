@@ -39,24 +39,111 @@ function appMenu() {
                 
             },
             {
+                //ask the user if they would like to add new employees in this function
                 type: "input",
                 name: "moreEmployees",
                 message: "Would you like to add more employees?",
-                choices: ["Yes", "No"],
+                choices: ["Intern", "Engineer", "No"],
                 //validate user input here
             }
 
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            const Manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
             console.log(manager);
-            if (answers.moreEmployees == "Yes") {
-                createTeam();
-            } else{
-                console.log("No");
+            teamGroup.push(manager);
+            if (answers.moreEmployees == "Intern") {
+                createIntern();
             }
-            
+            else if (answers.moreEmployees === "Engineer"){
+                createEngineer();
+            }
+            else {
+                buildHTML();
+            }
         })
     }
+}
+
+// take whatever the user wants and save it to whatever object matches
+function createEngineer(){
+    console.log("Choose your team members!")
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?",
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's ID?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's e-mail?",
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's Github username?",
+        },
+    
+    ]).then(answers => {
+        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        console.log(engineer);
+        teamGroup.push(manager);
+        if (answers.moreEmployees == "Intern") {
+            createIntern();
+        }
+        else if (answers.moreEmployees === "Engineer"){
+            createEngineer();
+        }
+        else {
+            buildHTML();
+        }
+    })
+}
+
+
+function createEngineer(){
+    console.log("Choose your team members!")
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?",
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's ID?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's e-mail?",
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's Github username?",
+        },
+    
+    ]).then(answers => {
+        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        console.log(engineer);
+        teamGroup.push(manager);
+        if (answers.moreEmployees == "Intern") {
+            createIntern();
+        }
+        else if (answers.moreEmployees === "Engineer"){
+            createEngineer();
+        }
+        else {
+            buildHTML();
+        }
+    })
 }
 
 
