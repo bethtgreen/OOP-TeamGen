@@ -11,6 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 function appMenu() {
+    createManager();
     function createManager(){
         console.log("Please build your team");
         inquirer.prompt([
@@ -92,7 +93,7 @@ function createEngineer(){
     ]).then(answers => {
         const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
         console.log(engineer);
-        teamGroup.push(manager);
+        teamGroup.push(engineer);
         if (answers.moreEmployees == "Intern") {
             createIntern();
         }
@@ -147,10 +148,13 @@ function createIntern(){
 }
 
 
+// function buildHTML
 
 
+// function appMenu(){
+   
 
-appMenu()
+// }
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
