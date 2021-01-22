@@ -6,3 +6,5 @@ This is a software engineering team generator command line application. The appl
 2. Type in node app.js to run the app.
 3. Fill out the team generating questions. 
 4. Go to live application and see your teammates! 
+
+[Watch this video for a walkthrough of the application!](https://drive.google.com/file/d/1kfiQbT5vyWIo-gKwb0AfVbxDOJH-PnzQ/view)
