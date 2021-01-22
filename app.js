@@ -41,12 +41,14 @@ function appMenu() {
                 type: "input",
                 name: "email",
                 message: "What is your manager's e-mail?",
+                validate: validateEmail
               
             },
             {
                 type: "input",
                 name: "officeNumber",
                 message: "What is your manager's office number?",
+                validate: confirmNumber
                 
             },
             {
@@ -81,21 +83,25 @@ function createEngineer(){
             type: "input",
             name: "name",
             message: "What is the engineer's name?",
+            validate: confirmName
         },
         {
             type: "input",
             name: "id",
             message: "What is the engineer's ID?",
+            validate: confirmNumber
         },
         {
             type: "input",
             name: "email",
             message: "What is the engineer's e-mail?",
+            validate: validateEmail
         },
         {
             type: "input",
             name: "github",
             message: "What is the engineer's Github username?",
+            validate: confirmName
         },
     
     ]).then(answers => {
@@ -122,21 +128,25 @@ function createIntern(){
             type: "input",
             name: "name",
             message: "What is the Interns's name?",
+            validate: confirmName
         },
         {
             type: "input",
             name: "id",
             message: "What is the Interns's ID?",
+            validate: confirmNumber
         },
         {
             type: "input",
             name: "email",
             message: "What is the Interns's e-mail?",
+            validate: confirmEmail
         },
         {
             type: "input",
             name: "school",
             message: "What is the Intern's school?",
+            validate: confirmName
         },
     
     ]).then(answers => {
