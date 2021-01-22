@@ -11,6 +11,14 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 var teamGroup = [];
 
+ 
+function validateEmail(name) 
+{if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(name))
+  {
+    return (true)
+  }
+    return("Please enter a valid e-mail address!")
+}
 
 function appMenu() {
     createManager();
@@ -21,13 +29,13 @@ function appMenu() {
                 type: "input",
                 name: "name",
                 message: "What is your manager's name?",
-                //validate user input here
+                validate: confirmName
             },
             {
                 type: "input",
                 name: "id",
                 message: "What is your manager's ID?",
-              
+                validate: confirmNumber
             },
             {
                 type: "input",
